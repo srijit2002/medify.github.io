@@ -6,20 +6,18 @@
 }
 
 @font-face {
-  src: url("/src/Fonts/Redwing-Medium.otf");
-  font-family: "redwing";
-}
-@font-face {
-  src: url(/src/Fonts/BebasNeue-Book.otf);
-  font-family: "bebas";
+  font-family: "bebas_neuebook";
+  src: url("..//src/Fonts/bebasneue-book-webfont.woff2") format("woff2"), url("..//src/Fonts/bebasneue-book-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 :root {
   --primary-clr: #33b6f3;
   --primary-clr-unactive: #33b6f386;
   --secondary-clr: #08c8f6;
   --secondary-clr-unactive: rgb(255, 255, 255);
-  --primary-ff: "sans-serif";
-  --secondary-ff:"bebas";
+  --primary-ff: sans-serif;
+  --secondary-ff:"bebas_neuebook";
   --ff-size-extra-large: 5rem;
   --ff-size-large: 1.5rem;
   --ff-size-medium: 1.3rem;
@@ -78,7 +76,7 @@
 }
 .collapseable__menu h2 {
   font-size: var(--ff-size-large);
-  font-family: "bebas";
+  font-family: var(--secondary-ff);
   letter-spacing: 1.3rem;
   line-height: 1.5em;
 }

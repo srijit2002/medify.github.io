@@ -99,7 +99,7 @@ function checkIfTimeout(minuteRemaining, secondRemaining, IntervalID) {
         setTimeout(() => {
             alarmAudio.pause();
             alarmAudio.currentTime=0;
-        }, 10000);
+        }, 30000);
     }
     else if (minuteRemaining >= 0) {
         updateMinute(minuteRemaining, secondRemaining);

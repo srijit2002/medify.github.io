@@ -4,22 +4,23 @@
   box-sizing: border-box;
   overflow: hidden;
 }
-@font-face{
-  src:url("/src/Fonts/Redwing-Medium.otf");
-  font-family: "redwing";
+@font-face {
+  font-family: 'bebas_neuebook';
+  src: url('..//src/Fonts/bebasneue-book-webfont.woff2') format('woff2'),
+       url('..//src/Fonts/bebasneue-book-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
-@font-face{
-  src: url(/src/Fonts/BebasNeue-Book.otf);
-  font-family: "bebas";
-}
+
 :root {
   --primary-clr: #33b6f3;
   --primary-clr-unactive: #33b6f386;
   --secondary-clr: #08c8f6;
   --secondary-clr-unactive: rgb(255, 255, 255);
 
-  --primary-ff: "sans-serif";
-  --secondary-ff:"bebas";
+  --primary-ff: sans-serif;
+  --secondary-ff:'bebas_neuebook';
   --ff-size-extra-large: 5rem;
   --ff-size-large: 1.5rem;
   --ff-size-medium: 1.3rem;
@@ -79,7 +80,7 @@
   transition: all 1.5s ease-out ;
   h2 {
     font-size: var(--ff-size-large);
-    font-family:"bebas";
+    font-family:var(--secondary-ff);
     letter-spacing:1.3rem;
     line-height: 1.5em;
   }
@@ -161,12 +162,12 @@
 }
 .timeremaining{
   h1{
-    position: relative;
+   position: relative;
    border-radius: 10px;
    padding: 0.1em;
    font-size: var(--ff-size-extra-large);
    letter-spacing: 0.2rem;
-   font-family: var(--secondary-ff);
+   font-family:var(--secondary-ff);
    color:var(--secondary-clr);
    background-color: var(--secondary-clr-unactive);
    z-index:15;
