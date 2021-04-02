@@ -45,21 +45,18 @@
 .header ul li {
   list-style: none;
   font-size: var(--ff-size-large);
-  font-family: "bebas";
+  font-family: var(--secondary-ff);
   border-bottom: 1px solid var(--secondary-clr-unactive);
   margin: 0.3em 0.5em;
   text-transform: uppercase;
 }
-.header ul li a {
-  color: var(--secondary-clr-unactive);
-  padding: 1em 0.5em;
-  text-decoration: none;
-}
 
 #copyright {
+  font-family: var(--secondary-ff);
   font-size: var(--ff-size-medium);
   border: none;
   color: var(--secondary-clr-unactive);
+  letter-spacing: 0.2rem;
 }
 
 .collapseable__menu {
