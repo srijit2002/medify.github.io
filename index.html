@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script async src="./script/app.js"></script>
+    <title>Medicatiion App</title>
+  </head>
+  <body>
+    <!-- hambureger icon =========================================================================================-->
+    <!-- navbar with hamburger menu -->
+    <nav class="header" id="header">
+      <ul class="menu">
+      
+        <li id="copyright">
+          Created by Srijit Mondal||&copy; All right reserved
+        </li>
+      </ul>
+    </nav>
+
+    <header class="navbar flex__container__row__direction">
+      <div class="nav__icon" id="hamburger">
+        <img src="/src/svg/menu.svg" alt="more" />
+      </div>
+      </div>
+    </header>
+    <!-- flex container========================================================================================== -->
+    <div class="container flex__container--column">
+      <div class="timer__input flex__container--row">
+        <div id="time__bar"class="preset__times flex__container--row">
+          <button value="5"class="btn">5 Minute</button>
+          <button value="10"class="btn">10 Minute</button>
+          <button value="15"class="btn">15 Minute</button>
+        </div>
+        <div id="timer" class="stopwatch icon">
+          <img src="./src/svg/timer.svg" alt="" />
+        </div>
+      </div>
+
+      <div class="timer__output">
+        <div class="timeremaining position--center flex--center">
+          <h1 id="timerClock">00:00</h1>
+        </div>
+        <div class="wave--primary">
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="1528.01px"
+            height="824.11px"
+            viewBox="0 0 1528.01 824.11"
+            style="enable-background: new 0 0 1528.01 824.11"
+            xml:space="preserve"
+          >
+            <style type="text/css">
+              .st0 {
+                fill: url(#SVGID_1_);
+                stroke: #000000;
+                stroke-miterlimit: 10;
+              }
+              .st1 {
+                fill: url(#SVGID_2_);
+                stroke: #000000;
+                stroke-miterlimit: 10;
+              }
+            </style>
+            <defs></defs>
+            <linearGradient
+              id="SVGID_1_"
+              gradientUnits="userSpaceOnUse"
+              x1="764.0103"
+              y1="823.6107"
+              x2="764.0103"
+              y2="0.5"
+            >
+              <stop offset="0" style="stop-color: #037ade" />
+              <stop offset="0.3421" style="stop-color: #039bd4" />
+              <stop offset="1" style="stop-color: #03e5be" />
+            </linearGradient>
+            <path
+              class="st0"
+              d="M0.51,92.61c0,0,323-220,763.97,20c513.04,279.23,763.03-20,763.03-20v731H28.6L0.51,92.61z"
+            />
+          </svg>
+        </div>
+        <div class="wave--secondary">
+          <!-- Generator: Adobe Illustrator 24.1.1, SVG Export Plug-In  -->
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="1527px"
+            height="823.11px"
+            viewBox="0 0 1527 823.11"
+            style="enable-background: new 0 0 1527 823.11"
+            xml:space="preserve"
+          >
+            <style type="text/css">
+              .st0 {
+                fill: url(#SVGID_1_);
+              }
+              .st1 {
+                fill: url(#SVGID_2_);
+              }
+            </style>
+            <defs></defs>
+            <linearGradient
+              id="SVGID_1_"
+              gradientUnits="userSpaceOnUse"
+              x1="763.5"
+              y1="823.1107"
+              x2="763.5"
+              y2="3.497316e-07"
+              gradientTransform="matrix(-1 0 0 1 1527 0)"
+            >
+              <stop offset="0" style="stop-color: #037ade; stop-opacity: 0.7" />
+              <stop
+                offset="0.3421"
+                style="stop-color: #039bd4; stop-opacity: 0.7"
+              />
+              <stop offset="1" style="stop-color: #03e5be; stop-opacity: 0.7" />
+            </linearGradient>
+            <path
+              class="st0"
+              d="M1527,92.11c0,0-323-220-763.97,20C249.99,391.34,0,92.11,0,92.11l0,731h1498.91L1527,92.11z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="music__container flex__container--row">
+        <div  class="om icon song">
+          <img src="/src/svg/om.svg" alt="" srcset="" />
+          <audio loop id="om" src="./src/Audio/Om chanting.mp3"></audio>
+        </div>
+        <div class="alpha icon song">
+          <img src="/src/svg/sound.svg" alt="" />
+          <audio loop id="alpha" src="./src/Audio/alpha wave.mp3"></audio>
+        </div>
+        <div class="water icon song">
+          <img src="/src/svg/drop.svg" alt="" />
+          <audio loop id="river" src="./src/Audio/River flow.mp3"></audio>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

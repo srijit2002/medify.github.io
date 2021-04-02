@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@font-face {
+  src: url("/src/Fonts/Redwing-Medium.otf");
+  font-family: "redwing";
+}
+@font-face {
+  src: url(/src/Fonts/BebasNeue-Book.otf);
+  font-family: "bebas";
+}
+:root {
+  --primary-clr: #33b6f3;
+  --primary-clr-unactive: #33b6f386;
+  --secondary-clr: #08c8f6;
+  --secondary-clr-unactive: rgb(255, 255, 255);
+  --primary-ff: "sans-serif";
+  --secondary-ff:"bebas";
+  --ff-size-extra-large: 5rem;
+  --ff-size-large: 1.5rem;
+  --ff-size-medium: 1.3rem;
+  --ff-size-small: 1rem;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 0vh;
+  z-index: 10;
+  transition: all 1.2s ease-in-out;
+}
+.header ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.header ul li {
+  list-style: none;
+  font-size: var(--ff-size-large);
+  font-family: "bebas";
+  border-bottom: 1px solid var(--secondary-clr-unactive);
+  margin: 0.3em 0.5em;
+  text-transform: uppercase;
+}
+.header ul li a {
+  color: var(--secondary-clr-unactive);
+  padding: 1em 0.5em;
+  text-decoration: none;
+}
+
+#copyright {
+  font-size: var(--ff-size-medium);
+  border: none;
+  color: var(--secondary-clr-unactive);
+}
+
+.collapseable__menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 150;
+  color: var(--secondary-clr-unactive);
+  padding: 0 1em;
+  transition: all 1.5s ease-out;
+}
+.collapseable__menu h2 {
+  font-size: var(--ff-size-large);
+  font-family: "bebas";
+  letter-spacing: 1.3rem;
+  line-height: 1.5em;
+}
+.collapseable__menu h3 {
+  letter-spacing: 1.3rem;
+  font-size: var(--ff-size-small);
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.nav__icon {
+  margin: 1em;
+  position: fixed;
+  transition: all 0.6s ease-in;
+  z-index: 200;
+  width: 17vw;
+  height: 13vw;
+  border-radius: 10px;
+  box-shadow: 0px 0px 145px var(--primary-clr);
+}
+.nav__icon img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(180deg);
+}
+
+.container {
+  margin-top: 2em;
+  width: 100vw;
+  height: 92vh;
+  padding: 1em;
+}
+
+.timer__input {
+  margin-top: 3em;
+  justify-content: space-around;
+  width: 90vw;
+  align-items: center;
+}
+
+.preset__times {
+  width: 0vw;
+  background-color: var(--primary-clr-unactive);
+  border-radius: 1em 0 0 1em;
+}
+
+.stopwatch {
+  position: absolute;
+  left: 79%;
+  box-shadow: 0px 0px 10px var(--primary-clr);
+}
+
+.timer__output {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 70vw;
+  border-radius: 50%;
+  border: 3px solid var(--secondary-clr);
+}
+
+.timeremaining h1 {
+  position: relative;
+  border-radius: 10px;
+  padding: 0.1em;
+  font-size: var(--ff-size-extra-large);
+  letter-spacing: 0.2rem;
+  font-family: var(--secondary-ff);
+  color: var(--secondary-clr);
+  background-color: var(--secondary-clr-unactive);
+  z-index: 15;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.wave--primary {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  z-index: 10;
+}
+.wave--primary svg {
+  position: relative;
+  top: 50%;
+  left: 0;
+  width: 150%;
+  height: 100%;
+  background-repeat: repeat-x;
+  animation: wavePrimary 5s linear infinite;
+}
+
+@keyframes wavePrimary {
+  50% {
+    left: -50%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+.wave--secondary {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  opacity: 0.4;
+  z-index: -1;
+}
+.wave--secondary svg {
+  position: relative;
+  top: 50%;
+  right: 0%;
+  width: 150%;
+  height: 100%;
+  background-repeat: repeat-x;
+  animation: waveSecondary 5s linear infinite;
+}
+
+@keyframes waveSecondary {
+  50% {
+    right: 50%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+.music__container {
+  position: absolute;
+  left: 0;
+  top: 80%;
+  width: 100vw;
+  height: auto;
+  justify-content: space-evenly;
+}
+
+.btn {
+  width: 30%;
+  height: 11vw;
+  max-height: 80px;
+  font-size: var(--ff-size-small);
+  text-align: center;
+  border: none;
+  outline: none;
+  user-select: none;
+  background-color: transparent;
+  color: white;
+}
+.btn:active {
+  background-color: var(--primary-clr);
+}
+.btn + .btn {
+  border-left: 2px solid white;
+}
+
+.flex__container--row {
+  display: flex;
+}
+
+.flex__container--column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.position--center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon {
+  width: 11vw;
+  max-width: 70px;
+  height: 11vw;
+  max-height: 70px;
+  min-width: 65px;
+  min-height: 65px;
+  border-radius: 50%;
+  background-color: var(--primary-clr);
+  padding: 0.4em;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.icon :hover {
+  opacity: 80%;
+}
+.icon img {
+  padding: 0.2em;
+  width: 100%;
+  height: 100%;
+  filter: invert(1);
+}
+
+.icon.active {
+  border: 4px solid #157cce;
+}
+
+/*# sourceMappingURL=style.css.map */
