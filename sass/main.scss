@@ -139,7 +139,15 @@
   left: 79%;
   box-shadow: 0px 0px 10px var(--primary-clr);
 }
-
+.controls{
+  width:100vw;
+  height: max-content;
+  justify-content: flex-end;
+  padding: 0.5em 2em;
+}
+.timer__restart{
+  margin-top: 1em;
+}
 .timer__output{
   position: absolute;
   top: 50%;

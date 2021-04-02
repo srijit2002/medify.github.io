@@ -66,10 +66,10 @@ Array.from(timerButtons).forEach(element => {
         var idOfWater = document.getElementById("river")
         pauseAll(e,idOfWater);
         idOfWater.play();
-        clearInterval(IntervalID);
         var durationInMillisecond = element.value * 60 * 1000;
         var alarTimeInMillisecond = new Date().setTime(new Date().getTime() + durationInMillisecond);
-        var IntervalID = setInterval(() => {
+      
+        IntervalID = setInterval(() => {
             var curretTimeInMillisecond = new Date().getTime();
             var timeRemainingInMilliSecond = alarTimeInMillisecond - curretTimeInMillisecond;
             var minuteRemaining = Math.floor(timeRemainingInMilliSecond / (60 * 1000));
@@ -82,17 +82,17 @@ Array.from(timerButtons).forEach(element => {
 })
 
 
-songs.forEach(element=>{
-     var songId=document.getElementById(element.childNodes[1].id);
-})
 
 
 function checkIfTimeout(minuteRemaining, secondRemaining, IntervalID) {
     if (minuteRemaining == 0 && secondRemaining == 0) {
         clearInterval(IntervalID);
         songs.forEach(element=>{
-            console.log(element);
-        })
+            var song = document.getElementById(element.childNodes[3].id);
+            song.pause();
+            song.currentTime=0;
+       })
+       
         timerClock.innerText = "00:00";
         let alarmAudio= new Audio("/src/Audio/Daybreak.mp3");
         alarmAudio.play();
@@ -133,3 +133,17 @@ function updateDisplay(minuteRemaining, secondRemaining) {
     timerClock.innerText = `${minuteRemaining}:${secondRemaining}`;
     
 }
+
+
+// v 1.1.1
+const restartBtn = document.getElementById("restart");
+restartBtn.addEventListener("click",()=>{
+    clearInterval(IntervalID);
+    songs.forEach(element=>{
+        var song = document.getElementById(element.childNodes[3].id);
+        song.pause();
+        song.currentTime=0;
+   })
+   
+    timerClock.innerText = "00:00";
+})
