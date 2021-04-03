@@ -18,12 +18,12 @@ hamburger__icon.addEventListener("click", () => {
 const timerIcon = document.getElementById("timer");
 const customTimeBar = document.getElementById("time__bar");
 timerIcon.addEventListener("click", () => {
-    if (customTimeBar.style.width != "80vw") {
-        customTimeBar.style.width = "80vw";
+    if (customTimeBar.style.transform!="scaleX(1)") {
+        customTimeBar.style.transform="scaleX(1)";
 
     }
-    else if (customTimeBar.style.width == "80vw") {
-        customTimeBar.style.width = "0vw";
+    else if (customTimeBar.style.transform!="scaleX(0)") {
+        customTimeBar.style.transform="scaleX(0)";
 
     }
 })
@@ -63,8 +63,10 @@ const timerClock = document.getElementById("timerClock");
 
 Array.from(timerButtons).forEach(element => {
     element.addEventListener("click", (e) => {
+        customTimeBar.style.transform="scaleX(0)";
         var idOfWater = document.getElementById("river")
         pauseAll(e,idOfWater);
+        document.getElementById("water").classList.add("active");
         idOfWater.play();
         var durationInMillisecond = element.value * 60 * 1000;
         var alarTimeInMillisecond = new Date().setTime(new Date().getTime() + durationInMillisecond);
@@ -88,6 +90,7 @@ function checkIfTimeout(minuteRemaining, secondRemaining, IntervalID) {
     if (minuteRemaining == 0 && secondRemaining == 0) {
         clearInterval(IntervalID);
         songs.forEach(element=>{
+            element.classList.remove("active");
             var song = document.getElementById(element.childNodes[3].id);
             song.pause();
             song.currentTime=0;
@@ -140,6 +143,7 @@ const restartBtn = document.getElementById("restart");
 restartBtn.addEventListener("click",()=>{
     clearInterval(IntervalID);
     songs.forEach(element=>{
+        element.classList.remove("active");
         var song = document.getElementById(element.childNodes[3].id);
         song.pause();
         song.currentTime=0;
