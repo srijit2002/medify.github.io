@@ -3,6 +3,7 @@
 const hamburger__icon = document.getElementById("hamburger");
 const header = document.getElementById("header");
 hamburger__icon.addEventListener("click", () => {
+   
     if (header.style.height != "100vh") {
         header.style.height = "100vh";
         hamburger__icon.style.transform = "Rotate(-90deg)";
@@ -97,7 +98,7 @@ function checkIfTimeout(minuteRemaining, secondRemaining, IntervalID) {
        })
        
         timerClock.innerText = "00:00";
-        let alarmAudio= new Audio("/src/Audio/Daybreak.mp3");
+        var alarmAudio=document.getElementById("alarm");
         alarmAudio.play();
         setTimeout(() => {
             alarmAudio.pause();
